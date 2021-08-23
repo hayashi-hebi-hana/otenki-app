@@ -19,6 +19,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/otenkiAPI",
+    name: "OtenkiAPI",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Weather.vue"),
+  },
 ]
 
 const router = new VueRouter({
