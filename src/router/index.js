@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
+import ImagePost from "../views/ImagePost.vue"
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const routes = [
     name: "OtenkiAPI",
     component: () =>
       import(/* webpackChunkName: "about" */ "../components/Weather.vue"),
+   },
+  {
+    path: "/image-post",
+    name: "ImagePost",
+    component: ImagePost,
   },
 ]
 
