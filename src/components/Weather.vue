@@ -48,7 +48,7 @@ export default {
         .then((data) => {
           console.log(data)
           const kekka = document.getElementById("result")
-          kekka.textContent +=
+          kekka.textContent =
             "現在地の体感温度は" +
             data.current.feels_like +
             "℃、湿度は" +
