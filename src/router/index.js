@@ -21,6 +21,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
+    path: "/otenkiAPI",
+    name: "OtenkiAPI",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Weather.vue"),
+   },
+  {
     path: "/image-post",
     name: "ImagePost",
     component: ImagePost,
