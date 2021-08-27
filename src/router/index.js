@@ -1,15 +1,15 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import ImagePost from "../views/ImagePost.vue"
+import Index from "@/views/Index.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/Index",
+    path: "/",
     name: "Index",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Index.vue"),
+    component: Index,
   },
   {
     path: "/otenkiAPI",
