@@ -2,7 +2,7 @@
    <div>
       <p>今日のラッキーカラーは？</p>
       <div >
-     <button @click="startOmikuji">ラッキーカラーを見る！</button>
+     <button @click="lookLuckyColor">ラッキーカラーを見る！</button>
         </div>
         <div>
             <p v-if="result">今日のラッキーカラーは：{{result}}です！</p>
