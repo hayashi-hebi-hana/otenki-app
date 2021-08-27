@@ -31,6 +31,12 @@ const routes = [
     name: "ImagePost",
     component: ImagePost,
   },
+  {
+    path: "/LuckyColor",
+    name: "LuckyColor",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/LuckyColor.vue"),
+  }
 ]
 
 const router = new VueRouter({
