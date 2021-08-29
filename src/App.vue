@@ -5,6 +5,7 @@
       <router-link to="/otenkiAPI">OtenkiAPI</router-link> |
       <router-link to="/image-post">ImagePost</router-link>
       <router-link to="/LuckyColor">LuckyColor</router-link>
+      <router-link to="/SelectSex">SelectSex</router-link>
     </div>
     <router-view />
   </div>
