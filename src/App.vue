@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Index</router-link> |
       <router-link to="/otenkiAPI">OtenkiAPI</router-link> |
-      <router-link to="/image-post">ImagePost</router-link>
+      <router-link to="/image-post">ImagePost</router-link> |
       <router-link to="/LuckyColor">LuckyColor</router-link>
     </div>
     <router-view />
