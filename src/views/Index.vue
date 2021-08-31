@@ -1,17 +1,38 @@
 <template>
   <div>
-    {{ allData }}
+    <SelectSex @select-male="selectMale" @select-female="selectFemale" />
+    <!-- データ表示用 -->
+    <div>
+      {{ allData }}
+    </div>
+    <div>
+      {{ selectedSex }}
+    </div>
+    <!-- データ表示用 ここまで -->
   </div>
 </template>
 
 <script>
 import firebase from "firebase"
-
+import SelectSex from "@/components/SelectSex.vue"
 export default {
+  components: {
+    SelectSex,
+  },
+
   data() {
     return {
       allData: [],
+      selectedSex: "",
     }
+  },
+  methods: {
+    selectMale() {
+      this.selectedSex = "male"
+    },
+    selectFemale() {
+      this.selectedSex = "female"
+    },
   },
   created() {
     {
@@ -26,7 +47,6 @@ export default {
         })
     }
   },
-  methods: {},
   computed: {},
 }
 </script>

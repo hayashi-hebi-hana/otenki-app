@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="emitMale">Male</button>
-    <button @click="emitFeale">Female</button>
+    <button @click="emitFemale">Female</button>
   </div>
 </template>
 
@@ -9,10 +9,10 @@
 export default {
   methods: {
     emitMale() {
-      this.$emit("event-male")
+      this.$emit("select-male")
     },
     emitFemale() {
-      this.$emit("event-female")
+      this.$emit("select-female")
     },
   },
 }
