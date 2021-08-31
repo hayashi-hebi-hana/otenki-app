@@ -1,6 +1,7 @@
 <template>
   <div>
     <SelectSex @select-male="selectMale" @select-female="selectFemale" />
+    <Weather @send-weather-data="setWeather" />
     <!-- データ表示用 -->
     <div>
       {{ allData }}
@@ -15,15 +16,19 @@
 <script>
 import firebase from "firebase"
 import SelectSex from "@/components/SelectSex.vue"
+import Weather from "@/components/Weather.vue"
 export default {
   components: {
     SelectSex,
+    Weather,
   },
 
   data() {
     return {
       allData: [],
       selectedSex: "",
+      luckyColor: "",
+      weather: {},
     }
   },
   methods: {
@@ -32,6 +37,9 @@ export default {
     },
     selectFemale() {
       this.selectedSex = "female"
+    },
+    setWeather(data) {
+      this.weather = data
     },
   },
   created() {
