@@ -2,6 +2,8 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import ImagePost from "../views/ImagePost.vue"
 import Index from "@/views/Index.vue"
+import LuckyColor from "@/components/LuckyColor.vue"
+import Weather from "@/components/Weather.vue"
 
 Vue.use(VueRouter)
 
@@ -14,8 +16,7 @@ const routes = [
   {
     path: "/otenkiAPI",
     name: "OtenkiAPI",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Weather.vue"),
+    component: Weather,
   },
   {
     path: "/image-post",
@@ -25,8 +26,7 @@ const routes = [
   {
     path: "/LuckyColor",
     name: "LuckyColor",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/LuckyColor.vue"),
+    component: LuckyColor,
   },
 ]
 
