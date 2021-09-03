@@ -36,8 +36,8 @@
         <option value="白">白</option>
         <option value="黒">黒</option>
       </select>
-      <input type="text" v-model="url" placeholder="url" />
-      <button v-on:click="postCloth">追加</button>
+      <input type="text" v-model="url" placeholder="wear's page url" />
+      <button v-on:click="upload">追加</button>
       <!-- <div>
         <p v-for="cloth in clothes" :key="cloth.id">
           {{ cloth.name }} + {{ cloth.weather }} + {{ cloth.season }} +
@@ -59,7 +59,7 @@
 
 <script>
 import firebase from "firebase"
-import { db, storage } from "@/firebase"
+import { storage } from "@/firebase"
 
 export default {
   data() {
@@ -77,7 +77,7 @@ export default {
     }
   },
   methods: {
-    postCloth() {
+    postCloth(imageUrl) {
       const cloth = {
         sex: this.sex,
         name: this.name,
@@ -86,7 +86,7 @@ export default {
         season: this.season,
         color: this.color,
         url: this.url,
-        imageUrl: "https://via.placeholder.com/600x800",
+        imageUrl: imageUrl,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       }
 
@@ -125,12 +125,7 @@ export default {
         // 例 fetch(...).then(res => res.json()).then(...)
         .then((url) => {
           // storage にアップロードしたファイルに対応するドキュメントを保存する
-          const image = {
-            name: file.name,
-            url,
-            createdAt,
-          }
-          return db.collection("images").add(image)
+          this.postCloth(url)
         })
         .then(() => {
           this.message = "アップロード完了！"
