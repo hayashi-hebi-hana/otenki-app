@@ -14,6 +14,7 @@
       v-bind:clothes="allData"
       v-bind:weather="weather"
       :color="luckyColor"
+      :selectedSex="selectedSex"
     />
   </div>
 </template>

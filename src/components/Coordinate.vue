@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  props: ["clothes", "weather", "color"],
+  props: ["clothes", "weather", "color", "selectedSex"],
   data() {
     return {
       recommendedClothes: [],
@@ -16,22 +16,19 @@ export default {
   methods: {
     getCloth() {
       // this.clothes から sex と weather と color が 一致してる アイテムだけを取り出した recommendedClothes を作る
-      if (this.clothes.sex === this.selectedSex) {
-        if (this.clothes.weather === this.weather) {
-          if (this.clothes.color === this.color) {
-            this.recommendedClothes.push(this.clothes)
-          }
+      // for文とif 文で 条件に当てはまるものを temp に入れてく
+      let temp = []
+      for (let i = 0; i < this.clothes.length; i++) {
+        console.log(this.clothes[i].sex, this.selectedSex)
+        if (
+          this.clothes[i].sex === this.selectedSex
+          // this.clothes[i].weather === this.weather &&
+          // this.clothes[i].color === this.color &&
+          // this.clothes[i].season === season // 今のseasonの情報を取得する必要あり
+        ) {
+          temp.push(this.clothes[i])
         }
       }
-      let temp = []
-
-      // for文とif 文で 条件に当てはまるものを temp に入れてく
-
-      if (this.clothes.season === this.season) {
-        this.temp.push(this.clothes)
-      }
-
-      //
       this.recommendedClothes = temp
     },
   },
