@@ -1,10 +1,13 @@
 <template>
   <div>
-    <a href="#" class="SelectMale">
-      <v-button @click="emitMale">Male</v-button></a
-    ><a href="#" class="SelectFemale"
-      ><v-button @click="emitFemale">Female</v-button>
-    </a>
+    <div class="select-buttons">
+      <button @click="emitMale" class="select-button select-button--male">
+        Male
+      </button>
+      <button @click="emitFemale" class="select-button select-button--female">
+        Female
+      </button>
+    </div>
   </div>
 </template>
 
@@ -21,16 +24,16 @@ export default {
 }
 </script>
 <style scoped>
-a {
-  text-decoration: none;
-  color: #fff;
-  justify-content: csnter;
+.select-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
-.SelectMale {
-  display: inline-block;
-  width: calc(8vw + 2px);
-  height: calc(3vw + 2px);
-  margin: 0 auto;
+.select-button {
+  width: 5rem;
+  height: 3rem;
+  color: white;
   background-image: linear-gradient(
     90deg,
     #145bdf 0%,
@@ -39,42 +42,32 @@ a {
     #aaceec 100%
   );
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   text-transform: uppercase;
-  font-size: 1.5vw;
+  font-size: 1em;
   font-weight: bold;
 }
-.SelectMale:after {
-  content: attr(alt);
-  width: 8vw;
-  height: 3vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.select-button:hover {
+  animation: slidebg 300ms linear infinite;
 }
-.SelectMale:hover {
-  animation: slidebg 2s linear infinite;
-  margin: 0 auto;
-}
+
 @keyframes slidebg {
   to {
     background-position: 20vw;
   }
 }
 
-a {
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  justify-content: csnter;
+.select-button--male {
+  background-image: linear-gradient(
+    90deg,
+    #145bdf 0%,
+    #4f509c 49%,
+    #7fcffd 80%,
+    #aaceec 100%
+  );
 }
-.SelectFemale {
-  display: inline-block;
-  width: calc(8vw + 2px);
-  height: calc(3vw + 2px);
+
+.select-button--female {
   background-image: linear-gradient(
     90deg,
     #e76f9d 0%,
@@ -82,28 +75,5 @@ a {
     #f3c8ef 80%,
     #ed64f1 100%
   );
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 1.5vw;
-  font-weight: bold;
-}
-.SelectFemale:after {
-  content: attr(alt);
-  width: 8vw;
-  height: 3vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.SelectFemale:hover {
-  animation: slidebg 2s linear infinite;
-}
-@keyframes slidebg {
-  to {
-    background-position: 20vw;
-  }
 }
 </style>
