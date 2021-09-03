@@ -2,33 +2,35 @@
   <div class="otenkiAPI">
     <h1>天気取得API</h1>
     <div class="tenki-hyouji">
-      <div id="result">
-        <div id="weather">
-          <div class="tenki-wrapper">
-            <div id="description">
-              <span class="bold">現在の天気</span><br />
+      <div class="weather">
+        <div class="tenki-wrapper">
+          <div class="description">
+            <div class="bold">現在の天気</div>
+            <div>
               {{ description }}
             </div>
-            <img src="" id="icon" />
+          </div>
+          <img src="" class="icon" />
+        </div>
+      </div>
+      <div class="temp">
+        <div class="temp-wrapper">
+          <div class="kion">
+            <div class="bold">現在の気温</div>
+            <div>{{ kion }}℃</div>
+          </div>
+          <div class="taikan">
+            <div class="bold">体感気温</div>
+            <div>{{ taikan }}℃</div>
           </div>
         </div>
-        <div id="temp">
-          <div class="temp-wrapper">
-            <div id="kion">
-              <span class="bold">現在の気温</span>
-              {{ kion }}℃
-            </div>
-            <div id="taikan">
-              <span class="bold">体感気温</span><br />
-              {{ taikan }}℃
-            </div>
+      </div>
+      <div class="humidity">
+        <div class="humidText">
+          <div class="bold">現在の湿度</div>
+          <div>
+            {{ sitsudo }}
           </div>
-        </div>
-        <div id="humidity">
-          <p id="humidText">
-            <span class="bold">現在の湿度</span><br />
-            {{ sitsudo }}%
-          </p>
         </div>
       </div>
       <!-- 温度(気温と体感温度)と湿度と天気を表示したらよい？
@@ -105,17 +107,14 @@ export default {
 <style scoped>
 .tenki-hyouji {
   margin-top: 1.3rem;
-}
-
-#result {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#weather,
-#temp,
-#humidity {
+.weather,
+.temp,
+.humidity {
   height: 7rem;
   width: 24%;
   padding: 0.5rem;
@@ -124,16 +123,16 @@ export default {
   position: relative;
 }
 
-#weather,
-#temp {
+.weather,
+.temp {
   border-right: 0.1rem white solid;
 }
 
-#kion {
+.kion {
   padding-bottom: 0.2rem;
 }
 
-#taikan {
+.taikan {
   padding-bottom: 0.2rem;
 }
 
@@ -146,10 +145,10 @@ export default {
   transform: translateY(-50%) translateX(-50%);
 }
 
-/* #kion,
-#taikan,
-#description,
-#icon {
+/* .kion,
+.taikan,
+.description,
+.icon {
   position: absolute;
   top: 0;
   right: 0;
@@ -168,7 +167,7 @@ export default {
   white-space: pre;
 }
 
-#humidText {
+.humidText {
   width: 80%;
   margin-block-start: 0rem;
   margin-block-end: 0rem;
