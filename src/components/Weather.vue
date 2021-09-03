@@ -2,7 +2,6 @@
   <div class="otenkiAPI">
     <h1>天気取得API</h1>
     <div class="tenki-hyouji">
-      <div>↓現在地の体感温度、湿度、天気を下に表示↓</div>
       <div id="result">
         <div id="weather">
           <div class="tenki-wrapper">
@@ -20,14 +19,14 @@
               {{ kion }}℃
             </div>
             <div id="taikan">
-              <span class="bold">体感気温</span>
+              <span class="bold">体感気温</span><br />
               {{ taikan }}℃
             </div>
           </div>
         </div>
         <div id="humidity">
           <p id="humidText">
-            <span class="bold">現在の湿度</span>
+            <span class="bold">現在の湿度</span><br />
             {{ sitsudo }}%
           </p>
         </div>
@@ -121,13 +120,21 @@ export default {
   width: 24%;
   padding: 0.5rem;
   color: white;
-  background-color: slategray;
+  background-color: #87cefa;
   position: relative;
 }
 
 #weather,
 #temp {
   border-right: 0.1rem white solid;
+}
+
+#kion {
+  padding-bottom: 0.2rem;
+}
+
+#taikan {
+  padding-bottom: 0.2rem;
 }
 
 .tenki-wrapper,
@@ -150,6 +157,12 @@ export default {
   left: 0;
   margin: auto;
 } */
+
+.bold {
+  font-weight: 500;
+  font-size: 120%;
+  text-decoration-line: underline;
+}
 
 .bold::after {
   white-space: pre;
