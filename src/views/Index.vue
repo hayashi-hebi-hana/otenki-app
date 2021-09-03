@@ -10,6 +10,11 @@
       {{ selectedSex }}
     </div>
     <!-- データ表示用 ここまで -->
+    <Coordinate
+      v-bind:clothes="allData"
+      v-bind:weather="weather"
+      :color="luckyColor"
+    />
   </div>
 </template>
 
@@ -17,10 +22,13 @@
 import firebase from "firebase"
 import SelectSex from "@/components/SelectSex.vue"
 import Weather from "@/components/Weather.vue"
+import Coordinate from "@/components/Coordinate.vue"
+
 export default {
   components: {
     SelectSex,
     Weather,
+    Coordinate,
   },
 
   data() {
