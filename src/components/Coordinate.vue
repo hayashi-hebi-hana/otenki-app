@@ -7,7 +7,14 @@
 
 <script>
 export default {
-  props: ["clothes", "weather", "color", "selectedSex"],
+  props: [
+    "clothes",
+    "weather",
+    "color",
+    "selectedSex",
+    "season",
+    "temperature",
+  ],
   data() {
     return {
       recommendedClothes: [],
@@ -21,10 +28,12 @@ export default {
       for (let i = 0; i < this.clothes.length; i++) {
         console.log(this.clothes[i].sex, this.selectedSex)
         if (
-          this.clothes[i].sex === this.selectedSex
-          // this.clothes[i].weather === this.weather &&
-          // this.clothes[i].color === this.color &&
-          // this.clothes[i].season === season // 今のseasonの情報を取得する必要あり
+          this.clothes[i].sex === this.selectedSex &&
+          this.clothes[i].weather === this.weather &&
+          this.clothes[i].color === this.color &&
+          // 今のtemperatureとseasonの情報を取得したい
+          this.clothes[i].season === this.season &&
+          this.clothes[i].temperature === this.temperature
         ) {
           temp.push(this.clothes[i])
         }
