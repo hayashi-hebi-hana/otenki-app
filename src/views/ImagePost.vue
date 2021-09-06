@@ -10,10 +10,15 @@
       </select>
       <input type="text" v-model="name" placeholder="name" />
       <select name="wether" id="" v-model="weather">
-        <option value="hot">hot</option>
-        <option value="warm">warm</option>
-        <option value="cold">cold</option>
-        <option value="rain">rain</option>
+        <option value="晴れ">晴れ</option>
+        <option value="雨">雨</option>
+        <option value="曇り">曇り</option>
+      </select>
+      <select name="temperature" id="" v-model="temperature">
+        <option value="hot">hot28度以上</option>
+        <option value="warm">warm23-27度</option>
+        <option value="comfortable">comfortable15-22度</option>
+        <option value="cold">cold14以下</option>
       </select>
       <select name="season" id="" v-model="season">
         <option value="春">春</option>
@@ -65,6 +70,7 @@ export default {
       sex: "",
       name: "",
       weather: "",
+      temperature: "",
       season: "",
       color: "",
       url: "",
@@ -76,6 +82,7 @@ export default {
         sex: this.sex,
         name: this.name,
         weather: this.weather,
+        temperature: this.temperature,
         season: this.season,
         color: this.color,
         url: this.url,
