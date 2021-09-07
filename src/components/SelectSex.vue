@@ -29,6 +29,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  margin: 1.2rem;
 }
 .select-button {
   width: 5rem;
@@ -48,7 +49,7 @@ export default {
 }
 
 .select-button:hover {
-  animation: slidebg 300ms linear infinite;
+  animation: slidebg 2s linear infinite;
 }
 
 @keyframes slidebg {

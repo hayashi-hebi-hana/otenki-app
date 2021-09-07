@@ -128,7 +128,7 @@ export default {
     transform: translate(0, 0px);
   }
   100% {
-    transform: translate(0rem, -0.5rem);
+    transform: translate(0rem, -0.4rem);
   }
 }
 
