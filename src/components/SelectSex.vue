@@ -29,6 +29,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  margin: 1.2rem;
 }
 .select-button {
   width: 5rem;
@@ -45,10 +46,14 @@ export default {
   text-transform: uppercase;
   font-size: 1em;
   font-weight: bold;
+  filter: opacity(70%);
+  transition: 1s;
 }
 
 .select-button:hover {
-  animation: slidebg 300ms linear infinite;
+  filter: opacity(100%);
+  transform: scale(1.04);
+  /* animation: slidebg 2s linear infinite; */
 }
 
 @keyframes slidebg {
