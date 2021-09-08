@@ -112,7 +112,7 @@ export default {
   align-items: center;
 }
 
-/* .animation {
+.animation {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -128,9 +128,9 @@ export default {
     transform: translate(0, 0px);
   }
   100% {
-    transform: translate(0rem, -0.4rem);
+    transform: translate(0rem, -0.3rem);
   }
-} */
+}
 
 .description {
   justify-content: center;
@@ -148,7 +148,7 @@ export default {
   background-color: whitesmoke;
   position: relative;
   border-radius: 50%;
-  margin: 0.6rem;
+  margin: 0.6rem 0.5rem 1.2rem 0.5rem;
   box-shadow: 0 5px 6.1px rgba(0, 0, 0, 0.03),
     0 10.1px 11.4px rgba(0, 0, 0, 0.04), 0 38.4px 34.8px rgba(0, 0, 0, 0.06);
 }
@@ -191,6 +191,6 @@ export default {
 }
 
 .icon {
-  width: 20%;
+  width: 24%;
 }
 </style>
