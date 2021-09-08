@@ -18,6 +18,7 @@
       v-bind:weather="weather"
       :color="luckyColor"
       :selectedSex="selectedSex"
+      :season="season"
     />
   </div>
 </template>
@@ -43,6 +44,7 @@ export default {
       selectedSex: "",
       luckyColor: "",
       weather: {},
+      season: "",
     }
   },
   methods: {
@@ -60,17 +62,48 @@ export default {
     },
   },
   created() {
-    {
-      firebase
-        .firestore()
-        .collection("clothes")
-        .get()
-        .then((snapshot) => {
-          snapshot.forEach((doc) => {
-            this.allData.push(doc.data())
-          })
+    // firestore から clothes の documentsを取得
+    firebase
+      .firestore()
+      .collection("clothes")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          this.allData.push(doc.data())
         })
+      })
+
+    // 今日の日付からseasonを設定
+    const getSeason = () => {
+      const now = new Date()
+      const month = now.getMonth() + 1
+      switch (month) {
+        // 春
+        case 3:
+        case 4:
+        case 5:
+          return "春"
+
+        // 夏
+        case 6:
+        case 7:
+        case 8:
+          return "夏"
+
+        // 秋
+        case 9:
+        case 10:
+        case 11:
+          return "秋"
+
+        // 冬
+        case 12:
+        case 1:
+        case 2:
+          return "冬"
+      }
     }
+    this.season = getSeason()
   },
   computed: {},
 }
