@@ -142,7 +142,7 @@ export default {
 .temp,
 .humidity {
   height: 9rem;
-  width: 24%;
+  width: 27%;
   padding: 0.5rem;
   color: #cab8d9;
   background-color: whitesmoke;
