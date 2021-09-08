@@ -3,36 +3,45 @@
     <section>
       <h1>画像投稿</h1>
     </section>
-    <div>
-      <select name="sex" id="" v-model="sex">
-        <option value="male">male</option>
-        <option value="female">female</option>
-      </select>
-      <input type="text" v-model="name" placeholder="name" />
-      <select name="wether" id="" v-model="weather">
-        <option value="hot">hot</option>
-        <option value="warm">warm</option>
-        <option value="cold">cold</option>
-        <option value="rain">rain</option>
-      </select>
-      <select name="season" id="" v-model="season">
-        <option value="春">春</option>
-        <option value="夏">夏</option>
-        <option value="秋">秋</option>
-        <option value="冬">冬</option>
-      </select>
-      <select name="color" id="" v-model="color">
-        <option value="赤">赤</option>
-        <option value="青">青</option>
-        <option value="黄">黄</option>
-        <option value="橙">橙</option>
-        <option value="緑">緑</option>
-        <option value="紫">紫</option>
-        <option value="白">白</option>
-        <option value="黒">黒</option>
-      </select>
-      <input type="text" v-model="url" placeholder="wear's page url" />
-      <button v-on:click="upload">追加</button>
+    <div class="container">
+      <div class="selector-wrapper">
+          <select name="sex" id="" v-model="sex">
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+        <input type="text" v-model="name" placeholder="name" />
+        <select name="wether" id="" v-model="weather">
+          <option value="晴れ">晴れ</option>
+          <option value="雨">雨</option>
+          <option value="曇り">曇り</option>
+        </select>
+        <select name="temperature" id="" v-model="temperature">
+          <option value="hot">hot28度以上</option>
+          <option value="warm">warm23-27度</option>
+          <option value="comfortable">comfortable15-22度</option>
+          <option value="cold">cold14以下</option>
+        </select>
+        <select name="season" id="" v-model="season">
+          <option value="春">春</option>
+          <option value="夏">夏</option>
+          <option value="秋">秋</option>
+          <option value="冬">冬</option>
+        </select>
+        <select name="color" id="" v-model="color">
+          <option value="赤">赤</option>
+          <option value="青">青</option>
+          <option value="黄">黄</option>
+          <option value="橙">橙</option>
+          <option value="緑">緑</option>
+          <option value="紫">紫</option>
+          <option value="白">白</option>
+          <option value="黒">黒</option>
+        </select>
+      </div>
+      <div class="wear-url">
+        <input type="text" v-model="url" placeholder="wear's page url" />
+      <button class="url-add" v-on:click="upload">追加</button>
+      </div>
       <!-- <div>
         <p v-for="cloth in clothes" :key="cloth.id">
           {{ cloth.name }} + {{ cloth.weather }} + {{ cloth.season }} +
@@ -42,6 +51,7 @@
     </div>
     <div>
       <input
+        class="picture-upload"
         type="file"
         accept="image/*"
         :disabled="disabled"
@@ -65,6 +75,7 @@ export default {
       sex: "",
       name: "",
       weather: "",
+      temperature: "",
       season: "",
       color: "",
       url: "",
@@ -76,6 +87,7 @@ export default {
         sex: this.sex,
         name: this.name,
         weather: this.weather,
+        temperature: this.temperature,
         season: this.season,
         color: this.color,
         url: this.url,
@@ -145,3 +157,62 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.container {
+  margin-top: 1rem;
+  justify-content: center;
+  width: 100vw;
+}
+
+select {
+  background-color: snow;
+  display: inline-block;
+  border: black solid 0.1rem;
+  -webkit-appearance: auto;
+}
+
+input {
+  background-color: snow;
+  display: inline-block;
+  border: black solid 0.1rem;
+  -webkit-appearance: auto;
+}
+
+select,
+input {
+  height: 1.4rem;
+  margin: 0.1rem;
+}
+
+.picture-upload {
+  border: none;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  height:fit-content;
+}
+
+.url-add {
+  margin-left: 0.15rem;
+  border: rgb(118, 118, 118) solid 0.06rem;
+  padding: 0.1em;
+  width: 3em;
+  color: initial;
+  background-color: rgb(235, 235, 235);
+  border-radius: 0.1rem;
+}
+
+.url-add:hover {
+  background-color: rgb(230, 230, 230);
+  border-color: rgb(100, 100, 100);
+}
+
+.selector-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.wear-url {
+  margin: 0.5rem;
+}
+</style>
