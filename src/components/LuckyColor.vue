@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class>
     <p>今日のラッキーカラーは？</p>
     <a href="#" class="lookLuckyColor">
-      <button @click="lookLuckyColor">CHECK!</button>
+      <button @click="lookLuckyColor"><span>CHECK!</span></button>
     </a>
     <div>
       <p v-if="result">今日のラッキーカラーは{{ result }}です！</p>
@@ -28,56 +28,26 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0;
-  background-color: rgba(223, 230, 223, 0.699);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Helvetica, Sans-serif;
-}
-a {
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  margin: 10px auto;
-  width: 50px;
-}
 .lookLuckyColor {
-  width: calc(12vw + 6px);
-  height: calc(4vw + 6px);
-  margin: 10px auto;
-  background-image: linear-gradient(
-    90deg,
-    #77ceeb 0%,
-    #e6d58d 49%,
-    #db94c4 80%,
-    #9de2c2 100%
-  );
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 2.5vw;
-  font-weight: bold;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: 0.4s;
 }
-.lookLuckyColor:after {
-  content: attr(alt);
-  width: 12vw;
-  height: 4vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .lookLuckyColor:hover {
-  animation: slidebg 2s linear infinite;
+  background: #67c5ff;
+  color: white;
 }
-@keyframes slidebg {
-  to {
-    background-position: 20vw;
-  }
+
+p {
+  font-size: 1.4rem;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: -3px 2px 0 rgb(180, 176, 176);
 }
 </style>
