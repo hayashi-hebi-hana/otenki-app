@@ -109,6 +109,30 @@ export default {
 }
 </script>
 <style>
+h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 2.5em;
+  color: #fff;
+}
+h1:before,
+h1:after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  top: 50%;
+  width: 44px;
+  height: 2px;
+  background-color: #fff;
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+h1:before {
+  left: 0;
+}
+h1:after {
+  right: 0;
+}
 body {
   background: #f1e2db;
   -webkit-animation: colour 10s linear infinite;
@@ -132,15 +156,6 @@ body {
   }
 }
 @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
-
-h1 {
-  font-size: calc(10px + 8vh);
-  line-height: calc(10px + 10vh);
-  font-family: "Sacramento", cursive;
-  text-align: center;
-  animation: blink 10s infinite;
-  -webkit-animation: blink 10s infinite;
-}
 
 @keyframes blink {
   20%,
