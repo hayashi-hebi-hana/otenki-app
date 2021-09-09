@@ -29,21 +29,35 @@ export default {
 
 <style>
 .lookLuckyColor {
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
-  border-radius: 3px;
-  transition: 0.4s;
-}
-
-.lookLuckyColor:hover {
-  background: #67c5ff;
+  margin: 20px;
+  padding: 20px;
   color: white;
+  background-image: linear-gradient(
+    90deg,
+    #cbf1d5 0%,
+    #acc7d1 49%,
+    #f7c3ee 80%,
+    #eaf0c7 100%
+  );
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+  filter: opacity(70%);
+  transition: 1s;
+}
+.lookLuckyColor:hover {
+  filter: opacity(100%);
+  transform: scale(1.04);
 }
 
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
 p {
+  margin: 30px;
   font-size: 1.4rem;
   font-style: italic;
   letter-spacing: 0.1em;

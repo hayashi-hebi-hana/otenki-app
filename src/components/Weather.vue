@@ -1,6 +1,5 @@
 <template>
   <div class="otenkiAPI">
-    <h1>天気取得API</h1>
     <div class="tenki-hyouji">
       <div class="weather keyframe1 animation">
         <div class="tenki-wrapper">
