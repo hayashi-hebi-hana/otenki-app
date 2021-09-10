@@ -40,18 +40,18 @@
       </div>
       <div class="wear-url">
         <input type="text" v-model="url" placeholder="wear's page url" />
-      <button class="url-add" v-on:click="upload">追加</button>
-    </div>
-    <div>
-      <input
-        class="picture-upload"
-        type="file"
-        accept="image/*"
-        :disabled="disabled"
-        @change="onFileChange"
-      />
-      <span>{{ message }}</span>
-    </div>
+        <button class="url-add" v-on:click="upload">追加</button>
+      </div>
+      <div>
+        <input
+          class="picture-upload"
+          type="file"
+          accept="image/*"
+          :disabled="disabled"
+          @change="onFileChange"
+        />
+        <span>{{ message }}</span>
+      </div>
     </div>
   </div>
 </template>

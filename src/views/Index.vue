@@ -3,7 +3,7 @@
     <h1>Otenki Up!</h1>
     <SelectSex @select-male="selectMale" @select-female="selectFemale" />
     <Weather @send-weather-data="setWeather" />
-    <LuckyColor @lucky-color="LuckyColor" />
+    <LuckyColor @lucky-color="setLuckyColor" />
     <div class="imagepost"></div>
     <!-- データ表示用 -->
     <div>
@@ -16,7 +16,7 @@
     <Coordinate
       v-bind:clothes="allData"
       v-bind:weather="weather"
-      :color="luckyColor"
+      :luckyColor="luckyColor"
       :selectedSex="selectedSex"
       :season="season"
     />
@@ -60,7 +60,7 @@ export default {
     setWeather(data) {
       this.weather = data
     },
-    LuckyColor(data) {
+    setLuckyColor(data) {
       this.luckyColor = data
     },
   },
