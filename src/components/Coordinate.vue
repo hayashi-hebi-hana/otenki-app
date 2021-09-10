@@ -45,8 +45,8 @@ export default {
           // colorとweatherがいけない
           this.clothes[i].sex === this.selectedSex &&
           this.clothes[i].season === this.season &&
-          this.clothes[i].temperature === this.temperature &&
-          this.clothes[i].color === this.luckyColor
+          this.clothes[i].temperature === this.temperature
+          // this.clothes[i].color === this.luckyColor
           // this.clothes[i].weather === this.weather
           // 今のtemperatureとseasonの情報を取得したい
           // temperature は
