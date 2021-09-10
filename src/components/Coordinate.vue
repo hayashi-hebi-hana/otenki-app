@@ -18,7 +18,6 @@
     <!-- <img src="recommendedClothes.imageUrl" /> -->
   </section>
 </template>
-
 <script>
 export default {
   props: ["clothes", "weather", "luckyColor", "selectedSex", "season"],
@@ -100,6 +99,7 @@ export default {
   font-weight: bold;
   filter: opacity(70%);
   transition: 1s;
+  cursor: pointer;
 }
 .button:hover {
   filter: opacity(100%);
