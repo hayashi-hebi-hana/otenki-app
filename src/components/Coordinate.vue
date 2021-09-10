@@ -2,6 +2,14 @@
   <section>
     <div v-on:click="getCloth" class="button">服取得</div>
     <div>{{ recommendedClothes }}</div>
+    <div v-for="(cloth, index) in recommendedClothes" v-bind:key="index">
+      <a v-bind:href="cloth.url">
+        <div>
+          {{ cloth.name }}
+        </div>
+        <img v-bind:src="cloth.imageUrl" :alt="cloth.imageUrl" />
+      </a>
+    </div>
     <!-- コーディネートの名前と画像のみを表示したい -->
     <!-- <img src="recommendedClothes.imageUrl" /> -->
   </section>
@@ -49,14 +57,6 @@ export default {
       // for文とif 文で 条件に当てはまるものを temp に入れてく
       let temp = []
       for (let i = 0; i < this.clothes.length; i++) {
-        console.log(
-          // this.clothes[i].weather
-          this.weather
-          // this.clothes[i].temperature, this.teperature
-          // this.clothes[i].color, this.luckyColor
-        )
-        console.log("this. luckyColor", this.luckyColor)
-        console.log("this.clothes[i].color", this.clothes[i].color)
         if (
           // colorとweatherがいけない
           this.clothes[i].sex === this.selectedSex &&
@@ -66,7 +66,6 @@ export default {
           // 今のtemperatureとseasonの情報を取得したい
           // temperature は
         ) {
-          console.log("tenki", this.tenki)
           if (this.clothes[i].weather === this.tenki || this.tenki === "") {
             temp.push(this.clothes[i])
           }
