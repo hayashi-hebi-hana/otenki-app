@@ -52,7 +52,7 @@
       />
       <span>{{ message }}</span>
     </div>
-  </div>
+    </div>
   </div>
 </template>
 
