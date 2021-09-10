@@ -33,6 +33,12 @@ export default {
     iro() {
       if (this.result === "赤") return "red"
       if (this.result === "青") return "blue"
+      if (this.result === "黄") return "yellow"
+      if (this.result === "橙") return "orange"
+      if (this.result === "緑") return "green"
+      if (this.result === "紫") return "violet"
+      if (this.result === "白") return "white"
+      if (this.result === "黒") return "black"
       return "black"
     },
   },
