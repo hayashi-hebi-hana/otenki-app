@@ -5,7 +5,12 @@
       <button @click="lookLuckyColor"><span>CHECK!</span></button>
     </a>
     <div>
-      <p v-if="result">今日のラッキーカラーは{{ result }}です！</p>
+      <p v-if="result">
+        今日のラッキーカラーは<span v-bind:style="{ color: iro }">{{
+          result
+        }}</span
+        >です！
+      </p>
     </div>
   </div>
 </template>
@@ -22,6 +27,13 @@ export default {
     lookLuckyColor() {
       let num = Math.floor(Math.random() * 8)
       this.result = this.choice[num]
+    },
+  },
+  computed: {
+    iro() {
+      if (this.result === "赤") return "red"
+      if (this.result === "青") return "blue"
+      return "black"
     },
   },
 }

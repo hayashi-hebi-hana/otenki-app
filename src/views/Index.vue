@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Otenki Up!</h1>
-    <SelectSex @select-male="selectMale" @select-female="selectFemale" />
     <Weather @send-weather-data="setWeather" />
     <LuckyColor @lucky-color="setLuckyColor" />
+    <SelectSex @select-male="selectMale" @select-female="selectFemale" />
     <div class="imagepost"></div>
     <!-- データ表示用 -->
     <div>
