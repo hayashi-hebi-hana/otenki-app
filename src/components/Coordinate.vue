@@ -1,13 +1,17 @@
 <template>
   <section>
     <div v-on:click="getCloth" class="button">服取得</div>
-    <div>{{ recommendedClothes }}</div>
+    <!-- <div>{{ recommendedClothes }}</div> -->
     <div v-for="(cloth, index) in recommendedClothes" v-bind:key="index">
-      <a v-bind:href="cloth.url">
+      <a v-bind:href="cloth.url" class="coordinateName">
         <div>
           {{ cloth.name }}
         </div>
-        <img v-bind:src="cloth.imageUrl" :alt="cloth.imageUrl" />
+        <img
+          v-bind:src="cloth.imageUrl"
+          :alt="cloth.imageUrl"
+          class="imageDisplay"
+        />
       </a>
     </div>
     <!-- コーディネートの名前と画像のみを表示したい -->
@@ -79,8 +83,9 @@ export default {
 
 <style scoped>
 .button {
-  margin: 20px;
+  margin: 50px auto;
   padding: 20px;
+  width: 15%;
   color: white;
   background-image: linear-gradient(
     90deg,
@@ -105,5 +110,21 @@ export default {
   to {
     background-position: 20vw;
   }
+}
+
+.coordinateName {
+  margin: 30px;
+  font-size: 1.4rem;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: -3px 2px 0 rgb(180, 176, 176);
+  text-decoration-line: none;
+}
+
+.imageDisplay {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 50px;
 }
 </style>
