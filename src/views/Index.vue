@@ -7,7 +7,7 @@
     <div class="imagepost"></div>
     <!-- データ表示用 -->
     <div>
-      {{ allData }}
+      <!-- {{ allData }} -->
     </div>
     <div>
       {{ selectedSex }}
@@ -20,6 +20,9 @@
       :selectedSex="selectedSex"
       :season="season"
     />
+    <!-- <div> -->
+    <!-- <img src="recommendedClothes.imageUrl" alt="" /> -->
+    <!-- </div> -->
   </div>
 </template>
 
@@ -58,7 +61,7 @@ export default {
       this.weather = data
     },
     LuckyColor(data) {
-      this.LuckyColor = data
+      this.luckyColor = data
     },
   },
   created() {
