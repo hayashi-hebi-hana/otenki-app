@@ -22,10 +22,6 @@ export default {
     lookLuckyColor() {
       let num = Math.floor(Math.random() * 8)
       this.result = this.choice[num]
-      this.sendData(this.result)
-    },
-    sendData(data) {
-      this.$emit("lucky-color", data)
     },
   },
 }
