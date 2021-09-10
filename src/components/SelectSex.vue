@@ -48,6 +48,7 @@ export default {
   font-weight: bold;
   filter: opacity(70%);
   transition: 1s;
+  margin-top: 50px;
 }
 
 .select-button:hover {
