@@ -34,7 +34,7 @@ export default {
   color: white;
   background-image: linear-gradient(
     90deg,
-    #cbf1d5 0%,
+    #d2f0da 0%,
     #acc7d1 49%,
     #f7c3ee 80%,
     #eaf0c7 100%
