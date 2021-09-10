@@ -9,11 +9,12 @@
 
 <script>
 export default {
-  props: ["clothes", "weather", "LuckyColor", "selectedSex", "season"],
+  props: ["clothes", "weather", "luckyColor", "selectedSex", "season"],
   data() {
     return {
       recommendedClothes: [],
       temperature: "",
+      tenki: "",
     }
   },
   methods: {
@@ -29,29 +30,46 @@ export default {
         this.temperature = "cold"
       }
     },
+    tenkiHantei() {
+      const tenki = this.weather.current.weather[0].main
+      if (tenki === "Clear") {
+        this.tenki = "晴れ"
+      } else if (tenki === "Clouds") {
+        this.tenki = "曇り"
+      } else if (tenki === "Rain") {
+        this.tenki = "雨"
+      } else {
+        this.tenki = ""
+      }
+    },
     getCloth() {
       this.getTemperature()
+      this.tenkiHantei()
       // this.clothes から sex と weather と color が 一致してる アイテムだけを取り出した recommendedClothes を作る
       // for文とif 文で 条件に当てはまるものを temp に入れてく
       let temp = []
       for (let i = 0; i < this.clothes.length; i++) {
-        // console.log(
-        // this.clothes[i].weather
-        // this.weather
-        // this.clothes[i].temperature, this.teperature
-        // this.clothes[i].color, this.luckyColor
-        // )
+        console.log(
+          // this.clothes[i].weather
+          this.weather
+          // this.clothes[i].temperature, this.teperature
+          // this.clothes[i].color, this.luckyColor
+        )
+        console.log("this. luckyColor", this.luckyColor)
+        console.log("this.clothes[i].color", this.clothes[i].color)
         if (
           // colorとweatherがいけない
           this.clothes[i].sex === this.selectedSex &&
           this.clothes[i].season === this.season &&
-          this.clothes[i].temperature === this.temperature
-          // this.clothes[i].color === this.luckyColor
-          // this.clothes[i].weather === this.weather
+          this.clothes[i].temperature === this.temperature &&
+          this.clothes[i].color === this.luckyColor
           // 今のtemperatureとseasonの情報を取得したい
           // temperature は
         ) {
-          temp.push(this.clothes[i])
+          console.log("tenki", this.tenki)
+          if (this.clothes[i].weather === this.tenki || this.tenki === "") {
+            temp.push(this.clothes[i])
+          }
         }
       }
       this.recommendedClothes = temp
@@ -62,12 +80,31 @@ export default {
 
 <style scoped>
 .button {
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
-  border-radius: 3px;
-  transition: 0.4s;
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    #d2f0da 0%,
+    #acc7d1 49%,
+    #f7c3ee 80%,
+    #eaf0c7 100%
+  );
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+  filter: opacity(70%);
+  transition: 1s;
+}
+.button:hover {
+  filter: opacity(100%);
+  transform: scale(1.04);
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
 }
 </style>
