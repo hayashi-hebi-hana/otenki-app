@@ -5,7 +5,7 @@
     </section>
     <div class="container">
       <div class="selector-wrapper">
-          <select name="sex" id="" v-model="sex">
+        <select name="sex" id="" v-model="sex">
           <option value="male">male</option>
           <option value="female">female</option>
         </select>
@@ -183,7 +183,7 @@ input {
   border: none;
   background-color: transparent;
   margin-top: 0.5rem;
-  height:fit-content;
+  height: fit-content;
 }
 
 .url-add {
