@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Index</router-link> |
-      <router-link to="/otenkiAPI">OtenkiAPI</router-link> |
-      <router-link to="/image-post">ImagePost</router-link> |
-      <router-link to="/LuckyColor">LuckyColor</router-link>
+      <router-link to="/"></router-link>
+      <router-link to="/otenkiAPI"></router-link>
+      <router-link to="/image-post"></router-link>
+      <router-link to="/LuckyColor"></router-link>
     </div>
     <router-view />
   </div>
