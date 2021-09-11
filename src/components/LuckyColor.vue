@@ -1,7 +1,7 @@
 <template>
   <div class>
     <p>今日のラッキーカラーは？</p>
-    <a href="#" class="lookLuckyColor">
+    <a href="javascript:void()" class="lookLuckyColor">
       <button @click="lookLuckyColor"><span>CHECK!</span></button>
     </a>
     <div>
@@ -46,7 +46,8 @@ export default {
 </script>
 
 <style>
-.lookLuckyColor {
+button {
+  display: inline-block;
   margin: 20px;
   padding: 20px;
   color: white;
@@ -63,7 +64,8 @@ export default {
   font-weight: bold;
   box-shadow: 0 0.2rem rgba(0, 0, 0, 0.26);
 }
-.lookLuckyColor:active {
+
+button:active {
   transform: translateY(0.2rem);
   box-shadow: none;
 }
@@ -74,7 +76,7 @@ export default {
   }
 }
 p {
-  margin: 30px;
+  margin: 15px;
   font-size: 1.4rem;
   font-style: italic;
   letter-spacing: 0.1em;

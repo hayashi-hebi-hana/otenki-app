@@ -32,7 +32,9 @@ export default {
   margin: 1.2rem;
 }
 .select-button {
-  width: 5rem;
+  margin-top: 20px;
+  display: inline-block;
+  width: 6em;
   height: 3rem;
   color: white;
   background-image: linear-gradient(
@@ -42,10 +44,11 @@ export default {
     #7fcffd 80%,
     #aaceec 100%
   );
-  border-radius: 5px;
+  border-radius: 8px;
   text-transform: uppercase;
   font-size: 1em;
   font-weight: bold;
+  padding: inherit;
   box-shadow: 0 0.2rem rgba(0, 0, 0, 0.26);
 }
 

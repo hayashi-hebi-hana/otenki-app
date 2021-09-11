@@ -9,7 +9,7 @@
     <div>
       <!-- {{ allData }} -->
     </div>
-    <div>
+    <div class="seibetu">
       {{ selectedSex }}
     </div>
     <!-- データ表示用 ここまで -->
@@ -112,6 +112,15 @@ export default {
 }
 </script>
 <style>
+.seibetu {
+  font-size: 2em;
+  color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-shadow: -3px 2px 0 rgb(180, 176, 176);
+}
+
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
 h1 {
   position: relative;
   display: inline-block;
