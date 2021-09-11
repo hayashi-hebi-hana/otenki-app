@@ -97,13 +97,12 @@ export default {
   text-transform: uppercase;
   font-size: 1em;
   font-weight: bold;
-  filter: opacity(70%);
-  transition: 1s;
+  box-shadow: 0 0.2rem rgba(0, 0, 0, 0.26);
   cursor: pointer;
 }
-.button:hover {
-  filter: opacity(100%);
-  transform: scale(1.04);
+.button:active {
+  transform: translateY(0.2rem);
+  box-shadow: none;
 }
 
 @keyframes slidebg {
