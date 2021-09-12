@@ -1,9 +1,9 @@
 <template>
   <div class>
     <p>今日のラッキーカラーは？</p>
-    <a href="javascript:void()" class="lookLuckyColor">
+    <div class="lookLuckyColor">
       <button @click="lookLuckyColor"><span>CHECK!</span></button>
-    </a>
+    </div>
     <div>
       <p v-if="result">
         今日のラッキーカラーは<span v-bind:style="{ color: iro }">{{
@@ -27,6 +27,10 @@ export default {
     lookLuckyColor() {
       let num = Math.floor(Math.random() * 8)
       this.result = this.choice[num]
+      this.sendData(this.result)
+    },
+    sendData(data) {
+      this.$emit("lucky-color", data)
     },
   },
   computed: {
